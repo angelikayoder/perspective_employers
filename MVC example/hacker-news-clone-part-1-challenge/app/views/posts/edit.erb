@@ -1,0 +1,5 @@
+<form action="/posts/<%= @post.id %>" method="post">
+  <!-- the value in this method renders the text to be edited -->
+  <input name="post_body" type="text" value="<%= @post.post_body %>">
+  <input type="submit" value="edit">
+</form>

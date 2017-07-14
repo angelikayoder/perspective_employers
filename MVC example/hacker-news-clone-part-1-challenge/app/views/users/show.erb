@@ -1,0 +1,31 @@
+<div id="profilepage">
+
+	<h3>Account details</h3>
+  <img id="avatar" src="<%= Faker::Avatar.image %>">
+
+	<% if current_user.id == @user.id %>
+		<form action="/users/<%= @user.id %>/delete" method="post">
+			<input type="submit" value="Delete">
+		</form>
+	<% end %>
+
+	<div class="user-info">
+
+		Username: <%= @user.username %><br>
+
+	</div>
+
+	<div class="user-posts">
+		<h3>My Posts</h3>
+		 <%= erb :"/users/_user_posts" %>
+	</div>
+
+
+	<div class="user-comments">
+		<h3>My Comments</h3>
+		<%= erb :"/users/_user_comments" %>
+	</div>
+
+
+
+</div>

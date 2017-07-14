@@ -1,0 +1,13 @@
+A User has many posts and comments.
+
+
+(li) = logged in
+
+As a User I can :
+create an account
+update an account
+delete an account
+view all questions without being logged in
+post a question (li)
+favorite an answer to my question(li)
+have a profile page which lists my questions, answers and favorites(li)

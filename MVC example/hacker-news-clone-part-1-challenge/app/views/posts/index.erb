@@ -1,0 +1,9 @@
+<h1>This is post.index.erb</h1>
+<h1>This is where I display all of the posts through
+  a loop of the Post.all</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><a href="/posts/<%= post.id %>"><%= post.post_body %></a></li>
+  <%end%>
+</ul>

@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+    <% if logged_in? %>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/<%= current_user.id %>"><%= current_user.username.capitalize %></a></li>
+      <li><a href="/posts/new">Make a post</a></li>
+      <li><a href="/logout">Logout</a></li>
+    <% else %>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/users/new">Register</a></li>
+    <% end %>
+    </ul>
+</nav>

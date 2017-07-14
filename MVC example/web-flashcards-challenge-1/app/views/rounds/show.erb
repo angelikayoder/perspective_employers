@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h1>Congrats! You finished. Here are your stats</h1>
+
+  <p>Number of questions answered correctly on the first try: <%= @round.right_on_first_try %></p>
+  <p>Number of guesses used: <%= @round.guesses.count %></p>
+
+</div>
+
+<!--Round.last.guesses.count-->
+
+<div class="deck_image">
+  <% if @round.deck_id == 1 %>
+      <img src='http://45.media.tumblr.com/d9fd3f1397b54986d57244398ce70295/tumblr_n9u4asnHk81rkvl19o1_250.gif' alt='uhura rocks' style='width:350px;height:775px;'>
+    <% elsif @round.deck_id == 2 %>
+      <img src='http://i.perezhilton.com/wp-content/uploads/2013/09/tumblr_lnub84nps91qcnasco1_500.gif' alt='hermione cheers' style='width:800px;height:250px;'>
+    <% else %>
+      <iframe src="//giphy.com/embed/12jdalMQkt7iM" width="480" height="278" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <% end %>
+
+</div>

@@ -1,0 +1,9 @@
+<ul>
+	<% if @user.comments.empty? %>
+		<li>You have no comments!!</li>
+	<% else %>
+		<% @user.comments.each do |comment| %>
+			<li><%= comment.comment_body %></li>
+		<% end %>
+	<% end %>
+</ul>

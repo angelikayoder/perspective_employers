@@ -1,0 +1,15 @@
+
+<h1><%= @single_deck.name %></h1>
+
+<form action="/rounds" method="post">
+  <input type="hidden" name="deck_id" value="<%= @single_deck.id %>">
+  <input type="submit" value="Click here to play">
+</form>
+
+<% if @single_deck.id == 1 %>
+  <img src='https://www.yourprops.com/movieprops/original/yp_524bbfd1094769.40675797/Star-Trek-The-Original-Series-Adult-Tribble-from-1960-s-Star-Trek-2.jpg' alt='tribbles' style='width:925px;height:800px;'>
+  <% elsif @single_deck.id == 2 %>
+    <img src='http://s5.favim.com/orig/54/harry-potter-hogwarts-Favim.com-516545.jpg' alt='marauders map' style='width:500px;height:700px;'>
+  <% else %>
+    <img src='http://skillcrush.com/wp-content/uploads/2012/05/tumblr_m3i4qdmtUS1rr8p66o1_500.jpg' alt='ruby cartoon' style='width:600px;height:450px;'>
+  <% end %>

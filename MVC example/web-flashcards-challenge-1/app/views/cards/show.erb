@@ -1,0 +1,28 @@
+<container class='card'>
+  <p class="question"><%= @current_card.question %></p>
+
+
+
+    <% if @current_guess %>
+      <% if @is_correct %>
+        CORRECT!
+      <% else %>
+        WRONG! (<%= @current_card.answer %>)
+      <% end %> 
+       
+      <% if @next_card.nil? %>
+        <p>You finished the deck!</p>
+        <a href="/rounds/<%= @round.id %>/finish">See your stats</a> 
+      <% else %>
+        <a href="/rounds/<%= @round.id %>/cards/<%= @next_card.id%>">Go to next card</a>
+      <% end %>
+      
+    <% else %>
+      <form action='/rounds/<%= @round.id %>/cards/<%= @current_card.id %>' method='post'>
+        <label for="guess">Your guess:</label>
+        <input type="text" name="guess"/>
+        <input type="submit" value="Submit Guess">
+      </form>
+    <% end %>
+
+</container>

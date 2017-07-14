@@ -1,0 +1,19 @@
+<div class="registration-container">
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <h1><%= error %></h1>
+    <% end %>
+  <% end %>
+
+  <form class="register_login" action="/users" method="post">
+
+    <label class="form_field" name="username"></label>
+    <input id="username" type="text" name="username" placeholder="Username">
+
+    <label class="form_field" name="password"></label>
+    <input id="password" type="password" name="password" placeholder="Password">
+
+    <input class="input_button" type="submit" value="Register">
+  </form>
+</div>

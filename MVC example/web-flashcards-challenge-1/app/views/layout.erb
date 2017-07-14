@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>Da Bomb Flashcards</title>
+</head>
+<body>
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+    <div class="max-w-700 center wrap-float">
+      <nav class="clearfix mar-b-1">
+        <ul class="no-bullets no-margin no-padding right">
+          <li class="pipe-separate t-light-blue left"><a href="/">home</a></li>
+          <li class="pipe-separate t-light-blue left"><a href="/users/new">register</a></li>
+          <% if logged_in? %>
+            <li class="pipe-separate t-light-blue left"><a href="/logout">logout</a></li>
+          <% else %>
+            <li class="pipe-separate t-light-blue left"><a href="/login">login</a></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <%= yield %>
+</body>
+</html>

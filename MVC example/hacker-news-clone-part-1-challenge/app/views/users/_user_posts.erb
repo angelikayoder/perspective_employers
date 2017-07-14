@@ -1,0 +1,9 @@
+<ul>
+	<% if @user.posts.empty? %>
+			<li>You have no posts!!</li>
+	<% else %>
+		<% @user.posts.each do |post| %>
+			<li><a href="/posts/<%=post.id%>"><%= post.post_body %></a></li>
+		<% end %>
+	<% end %>
+</ul>

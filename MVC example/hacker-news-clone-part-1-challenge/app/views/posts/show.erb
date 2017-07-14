@@ -1,0 +1,35 @@
+<h1>This is the show page for the post.erb. Single posts
+will be displayed as an individual entry here.</h1>
+
+<%= @post.post_body %>
+
+<% if current_user.id == @post.user_id %>
+  <a href="/posts/<%= @post.id %>/edit"><button>Edit</button></a>
+<% end %>
+
+<% if current_user.id == @post.user_id %>
+  <form action="/posts/<%= @post.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
+<% end %>
+
+<!-- <input type="submit" value="edit"> -->
+<ul>
+  <% @post.comments.order(:created_at).each do |comment| %>
+    <li>
+      <%= comment.comment_body %>
+      <% if current_user.id == comment.user_id %>
+        <form action="/posts/<%= @post.id %>/comments/<%= comment.id %>/delete" method="post">
+          <input type="submit" value="Delete">
+        </form>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<% if logged_in? %>
+  <form action="/posts/<%= @post.id %>/comments" method="post">
+    <input name="comment_body" type="text">
+    <input type="submit" value="comment">
+  </form>
+<% end %>
